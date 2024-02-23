@@ -1,5 +1,6 @@
 import { useCart } from "@/context/CartContext";
 import styles from "@/styles/Cart.module.css";
+import Image from "next/image";
 
 export default function Cart() {
   const { cart, removeFromCart } = useCart();
@@ -13,7 +14,7 @@ export default function Cart() {
       <h2>Your Cart</h2>
       {cart.map((item, index) => (
         <div key={index} className={styles.cartItem}>
-          <img src={item.image} alt={item.title} />
+          <Image src={item.image} alt={item.title} height={100} width={100} />
           <div>
             <h3>{item.title}</h3>
             <p>${item.price.toFixed(2)}</p>

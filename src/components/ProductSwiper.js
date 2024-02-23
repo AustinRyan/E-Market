@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +15,12 @@ const ProductSlider = ({ products }) => (
   >
     {products.map((product) => (
       <SwiperSlide key={product.id}>
-        <img src={product.image} alt={product.name} />
+        <Image
+          src={product.image}
+          alt={product.name}
+          height={100}
+          width={100}
+        />
       </SwiperSlide>
     ))}
   </Swiper>

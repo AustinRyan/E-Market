@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/FeaturedProducts.module.css";
+import Image from "next/image";
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
@@ -21,10 +22,12 @@ const FeaturedProducts = () => {
       <div className={styles.productsGrid}>
         {products.map((product) => (
           <div key={product.id} className={styles.productCard}>
-            <img
+            <Image
               src={product.image}
               alt={product.title}
               className={styles.productImage}
+              height={100}
+              width={100}
             />
             <div className={styles.productInfo}>
               <h3>{product.title}</h3>

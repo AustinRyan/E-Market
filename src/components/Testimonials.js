@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import styles from "@/styles/Testimonials.module.css";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -87,13 +88,15 @@ const Testimonials = () => {
               index === activeIndex ? styles.activeSlide : ""
             }`}
           >
-            <img
+            <Image
               src={testimonial.image}
               alt={testimonial.author}
               className={styles.avatar}
+              height={100}
+              width={100}
             />
             <blockquote className={styles.quote}>
-              <p>"{testimonial.quote}"</p>
+              <p>&quot;{testimonial.quote}&quot;</p>
               <footer className={styles.author}>- {testimonial.author}</footer>
             </blockquote>
           </div>

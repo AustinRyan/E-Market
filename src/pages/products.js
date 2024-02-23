@@ -3,6 +3,7 @@ import styles from "@/styles/ProductsPage.module.css";
 import Modal from "@/components/Modal";
 import Spinner from "@/components/Spinner";
 import { useCart } from "@/context/CartContext";
+import Image from "next/image";
 
 const fetchProducts = async () => {
   const response = await fetch("https://fakestoreapi.com/products");
@@ -45,10 +46,12 @@ const ProductsPage = () => {
             className={styles.productCard}
             onClick={() => handleProductClick(product)}
           >
-            <img
+            <Image
               src={product.image}
               alt={product.title}
               className={styles.productImage}
+              height={500}
+              width={500}
             />
             <div className={styles.productInfo}>
               <h3>{product.title}</h3>
@@ -62,10 +65,13 @@ const ProductsPage = () => {
         {selectedProduct && (
           <div className={styles.modalContent}>
             <div className={styles.modalImageContainer}>
-              <img
+              <Image
                 src={selectedProduct.image}
                 alt={selectedProduct.title}
                 className={styles.modalImage}
+                height={500}
+                width={500}
+                quality={100} // Increases the quality, default is 75
               />
             </div>
             <div className={styles.modalDetails}>
