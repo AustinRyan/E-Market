@@ -188,3 +188,68 @@
 .modalAddToCartButton:active {
   transform: scale(0.95); 
 }
+.addToDBButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addToDBButton:hover {
+  background-color: #45a049; 
+}
+.addNewProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.modalForm input,
+.modalForm textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modalForm input::placeholder,
+.modalForm textarea::placeholder {
+  color: #aaa;
+}
+
+.modalForm textarea {
+  resize: vertical; 
+  height: 100px; 
+}
+
+.modalForm button {
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase; 
+  transition: background-color 0.2s ease-in-out;
+}
+
+.modalForm button:hover {
+  background-color: #0056b3; 
+}

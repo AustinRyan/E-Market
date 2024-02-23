@@ -1,6 +1,7 @@
-// pages/api/products/create.js
 import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: ["query", "error", "warn"],
+});
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -8,16 +9,15 @@ export default async function handler(req, res) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { name, description, price, category, imageUrl } = req.body;
+  const { name, description, price, imageUrl } = req.body;
+  console.log("Creating product with data:", req.body);
 
   try {
-    // Use Prisma Client to create a new product
     const product = await prisma.product.create({
       data: {
         name,
         description,
-        price,
-        category,
+        price: parseFloat(price),
         imageUrl,
       },
     });
