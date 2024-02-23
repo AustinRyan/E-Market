@@ -24,7 +24,7 @@ export function CartProvider({ children }) {
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
-    toast.success(`${product.title} added to cart!`);
+    toast.success(`${product.name} added to cart!`);
   };
 
   const removeFromCart = (index) => {

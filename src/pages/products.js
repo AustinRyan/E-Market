@@ -166,7 +166,7 @@ const ProductsPage = () => {
               />
             </div>
             <div className={styles.modalDetails}>
-              <h3>{selectedProduct.title}</h3>
+              <h3>{selectedProduct.name}</h3>
               <p>{selectedProduct.description}</p>
               <span>${selectedProduct.price}</span>
               <button

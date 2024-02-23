@@ -14,9 +14,9 @@ export default function Cart() {
       <h2>Your Cart</h2>
       {cart.map((item, index) => (
         <div key={index} className={styles.cartItem}>
-          <Image src={item.image} alt={item.title} height={100} width={100} />
+          <Image src={item.imageUrl} alt={item.name} height={100} width={100} />
           <div>
-            <h3>{item.title}</h3>
+            <h3>{item.name}</h3>
             <p>${item.price.toFixed(2)}</p>
           </div>
           <button onClick={() => removeFromCart(index)}>Remove</button>
