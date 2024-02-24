@@ -7,7 +7,7 @@ export default function TestCreateProduct() {
       },
       body: JSON.stringify({
         name: "Example Product",
-        description: "This is an example product.",
+        description: "This is an example product",
         price: 9.99,
         category: "Example Category",
         imageUrl: "http://example.com/product.jpg",
